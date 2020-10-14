@@ -17,7 +17,6 @@ def loadLecturers():
     Opens file lecturers.txt, creates the lecturers and stores them into the list
     """
     pathToFile = find("lecturers.txt", "/Users/dstuchli/")
-    print(pathToFile)
     listOfLecturers = []
     increment = 0
 
@@ -26,9 +25,9 @@ def loadLecturers():
 
     for currentLine in lines:
         parsedLine = parseLecturer(currentLine)
-        id = "", parsedLine[0][0], parsedLine[1][0], increment
+        lecturer_id = "{0}{1}{2}".format(parsedLine[0][0], parsedLine[1][0], increment)
 
-        newLecturer = Lecturer.Lecturer(parsedLine[0], parsedLine[1], parsedLine[2], parsedLine[3], parsedLine[4], id)
+        newLecturer = Lecturer.Lecturer(parsedLine[0], parsedLine[1], parsedLine[2], parsedLine[3], parsedLine[4], lecturer_id)
 
         listOfLecturers.append(newLecturer)
 
@@ -44,7 +43,6 @@ def loadSubjects():
 
     Opens file subjects.txt, creates subjects and stores them into the list
     """
-    pass
 
 def parseLecturer(line):
     """Parses the line with lecturer's information
