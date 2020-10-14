@@ -1,5 +1,5 @@
 import os
-import Lecturer
+import Lecturer, Subject
 
 def main():
     """Main loop for timesheet generation.
@@ -8,8 +8,12 @@ def main():
     The output will be csv file with correctly calculated times.
     """
     listOfLecturers = loadLecturers()
+    listOfSubjects = loadSubjects()
+
     for lecturer in listOfLecturers:
         lecturer.print()
+    for subject in listOfSubjects:
+        subject.print()
 
 def loadLecturers():
     """Load all lecturers from file
@@ -43,6 +47,26 @@ def loadSubjects():
 
     Opens file subjects.txt, creates subjects and stores them into the list
     """
+    pathToFile = find("subjects.txt", "/Users/dstuchli/")
+    listOfSubjects = []
+    increment = 0
+
+    subjects = open(pathToFile, "r")
+    lines = subjects.readlines()
+
+    for currentLine in lines:
+        parsedLine = parseSubject(currentLine)
+        subjectId = "{0}{1}".format(parsedLine[3], increment)
+
+        newSubject = Subject.Subject(parsedLine[0], parsedLine[1], parsedLine[2], parsedLine[3], subjectId)
+
+        listOfSubjects.append(newSubject)
+
+        increment += 1
+
+    subjects.close()
+
+    return listOfSubjects
 
 def parseLecturer(line):
     """Parses the line with lecturer's information
@@ -57,18 +81,22 @@ def parseLecturer(line):
     preferedDates = logicalChunks[2].split(',')
 
     parsedLine = [name[0], name[1], subjects, preferedDates, logicalChunks[3].strip()]
-    print(parsedLine)
 
     return parsedLine
 
-def parseSubject():
-    pass
+def parseSubject(line):
+    """Parses the line with subject's information
 
-def createLecturers():
-    pass
+    Splits the line appropriately to name, hourlyAllowance, prerequisites
+    and domain
+    """
+    logicalChunks = line.split(':')
 
-def createSubjects():
-    pass
+    prerequisites = logicalChunks[2].split(',')
+
+    parsedLine = [logicalChunks[0], logicalChunks[1], prerequisites, logicalChunks[3].strip()]
+
+    return parsedLine
 
 def find(name, path):
     for root, dirs, files in os.walk(path):

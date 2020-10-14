@@ -3,17 +3,23 @@ class Subject:
     """Base class for subjects
 
     @name - name of the subject
-    @hourly_allowance - time which the subject consumes
+    @hourlyAllowance - time which the subject consumes
     @prerequisites - subjects needed for this subject to be available
     @domain - the general focus of this subject
-    @id - ID of the subject
+    @subjectId - ID of the subject
     """
 
-    domain = "UNUSED"
-
-    def __init__(self, name, hourly_allowance, prerequisites, domain, id):
+    def __init__(self, name, hourlyAllowance, prerequisites, domain, subjectId):
         self.name = name
-        self.hourly_allowance = hourly_allowance
+        self.hourlyAllowance = hourlyAllowance
         self.prerequisites = prerequisites
         self.domain = domain
-        self.id = id
+        self.subjectId = subjectId
+
+    def print(self):
+        print(
+            "Name: ", self.name, "\n",
+            "Hourly Allowance: ", self.hourlyAllowance, "\n",
+            "Prerequisites: ", self.prerequisites, "\n",
+            "Domain: ", self.domain, "\n",
+            "ID: ", self.subjectId, "\n")

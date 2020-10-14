@@ -1,0 +1,4 @@
+Subject1:6::Blue
+Subject2:1:Subject1:Blue
+Subject3:16:Subject1,Subject2:Green
+Subject4:12:Subject3:Red
