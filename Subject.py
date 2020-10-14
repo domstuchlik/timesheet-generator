@@ -18,8 +18,8 @@ class Subject:
 
     def print(self):
         print(
-            "Name: ", self.name, "\n",
-            "Hourly Allowance: ", self.hourlyAllowance, "\n",
-            "Prerequisites: ", self.prerequisites, "\n",
-            "Domain: ", self.domain, "\n",
-            "ID: ", self.subjectId, "\n")
+            "Name:", self.name, "\n",
+            "Hourly Allowance:", self.hourlyAllowance, "\n",
+            "Prerequisites:", self.prerequisites, "\n",
+            "Domain:", self.domain, "\n",
+            "ID:", self.subjectId, "\n")

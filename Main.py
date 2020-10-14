@@ -10,10 +10,7 @@ def main():
     listOfLecturers = loadLecturers()
     listOfSubjects = loadSubjects()
 
-    for lecturer in listOfLecturers:
-        lecturer.print()
-    for subject in listOfSubjects:
-        subject.print()
+    
 
 def loadLecturers():
     """Load all lecturers from file
@@ -29,13 +26,12 @@ def loadLecturers():
 
     for currentLine in lines:
         parsedLine = parseLecturer(currentLine)
-        lecturer_id = "{0}{1}{2}".format(parsedLine[0][0], parsedLine[1][0], increment)
+        lecturerId = "{0}{1}{2}".format(parsedLine[0][0], parsedLine[1][0], increment)
 
-        newLecturer = Lecturer.Lecturer(parsedLine[0], parsedLine[1], parsedLine[2], parsedLine[3], parsedLine[4], lecturer_id)
+        newLecturer = Lecturer.Lecturer(parsedLine[0], parsedLine[1], parsedLine[2], parsedLine[3], parsedLine[4], lecturerId)
 
         listOfLecturers.append(newLecturer)
 
-        currentLine = lecturers.readline()
         increment += 1
     
     lecturers.close()
