@@ -1,3 +1,3 @@
-Franta Krupica:Subject1,Subject2:10/10/2020,20/10/2020:Tabor
-Petra Brokolicova:Subject3:15/10/2020,20/10/2020-preffered:Plzen
-Olga Matilda:Subject4:10/10/2020,15/10/2020:Brno
+Franta Krupica:Subject1,Subject2:P30.10.2020,N20.11.2020:Tabor
+Petra Brokolicova:Subject1,Subject3:N5.12.2020,P20.11.2020:Plzen
+Olga Matilda:Subject4:N30.10.2020,N5.12.2020:Brno

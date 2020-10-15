@@ -4,16 +4,16 @@ class Lecturer:
 
     @firstName - first name of the lecturer
     @lastName - last name of the lecturer
-    @specialization - List of subjects that lecturer can lecture
+    @specializations - List of subjects that lecturer can lecture
     @preferedDates - List of dates on which the lecturer is available
     @residence - Place where the lecturer lives
     @lecturerId - ID of the lecturer
     """
 
-    def __init__(self, firstName, lastName, specialization, preferedDates, residence, lecturerId):
+    def __init__(self, firstName, lastName, specializations, preferedDates, residence, lecturerId):
         self.firstName = firstName
         self.lastName = lastName
-        self.specialization = specialization
+        self.specializations = specializations
         self.preferedDates = preferedDates
         self.residence = residence
         self.lecturerId = lecturerId
